@@ -10,19 +10,37 @@
 **** FONT-FACE *******************************************************
 *********************************************************************/
 @font-face{
-  font-family: 'ForzaMedium';
-  src: url('fonts/forza_medium.eot');
-  src: url('fonts/forza_medium.eot?#iefix') format('embedded-opentype'),
-       url('fonts/forza_medium.ttf') format('truetype');
+  font-family: 'RobotoBold';
+  src: url('fonts/roboto_bold.eot');
+  src: url('fonts/roboto_bold.eot?#iefix') format('embedded-opentype'),
+       url('fonts/roboto_bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face{
-  font-family: 'ForzaBold';
-  src: url('fonts/forza_bold.eot');
-  src: url('fonts/forza_bold.eot?#iefix') format('embedded-opentype'),
-       url('fonts/forza_bold.ttf') format('truetype');
+  font-family: 'RobotoMediumItalic';
+  src: url('fonts/roboto_mediumitalic.eot');
+  src: url('fonts/roboto_mediumitalic.eot?#iefix') format('embedded-opentype'),
+       url('fonts/roboto_mediumitalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'RobotoRegular';
+  src: url('fonts/roboto_regular.eot');
+  src: url('fonts/roboto_regular.eot?#iefix') format('embedded-opentype'),
+       url('fonts/roboto_regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'RobotoCondensed';
+  src: url('fonts/roboto_condensed.eot');
+  src: url('fonts/roboto_condensed.eot?#iefix') format('embedded-opentype'),
+       url('fonts/roboto_condensed.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -45,6 +63,168 @@ html, body{
 
 body{
   background: #fff;
+}
+
+/*********************************************************************
+*** HEADER ***********************************************************
+*********************************************************************/
+.head{
+  /* background: #fff; */
+  background: #f2f2f2;
+  color: #acb3b9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.head .col{
+  display: flex;
+  align-items: center;
+  width: 40%;
+}
+
+/* - BOARD - */
+.head .board{
+  display: block;
+  width: 140px;
+}
+
+.head .board span{
+  background: transparent url(images/ico_menu.png) no-repeat 30px 50%;
+  font-family: "RobotoBold", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 80px;
+  display: block;
+  padding-left: 65px;
+}
+
+/* - SEARCH - */
+.search{
+  display: block;
+}
+
+.search input{
+  background: #fff url(images/ico_search.png) no-repeat 10px 50%;
+  font-family: "RobotoMediumItalic", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #acb3b9;
+  border: 1px #fff solid;
+  padding: 15px 15px 15px 45px;
+  width: 250px;
+  transition: background .5s ease 0s;
+}
+
+.search input:focus{
+  background: #f4f4f4 url(images/ico_search.png) no-repeat 10px 50%;
+}
+
+/* - USER - */
+.user{
+  font-family: "RobotoBold", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.user .avatar{
+  display: block;
+  margin-right: 15px;
+  width: 40px;
+}
+
+.user .avatar img{
+  border-radius: 4px;
+  height: auto;
+  width: 100%;
+}
+
+/* - NOTIFICATION - */
+.notification{
+  display: flex;
+  margin-left: 20px;
+  position: relative;
+}
+
+.notification::before{
+  content: "";
+  display: block;
+  border-radius: 50%;
+  border: 3px #5894fe solid;
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  top: -6px;
+  right: -4px;
+}
+
+.notification span{
+  background: transparent url(images/ico_notification.png) no-repeat 50% 50%;
+  display: block;
+  height: 20px;
+  width: 20px;
+  -webkit-animation: notiRotate 1s infinite linear;
+  -moz-animation: notiRotate 1s infinite linear;
+  animation: notiRotate 1s infinite linear;
+}
+
+
+
+/*********************************************************************
+*** ANIMATIONS *******************************************************
+*********************************************************************/
+@-webkit-keyframes notiRotate{
+  0%{
+    -webkit-transform: rotate(0deg);
+  }
+  20%{
+    -webkit-transform: rotate(40deg);
+  }
+  50%{
+    -webkit-transform: rotate(-40deg);
+  }
+  70%{
+    -webkit-transform: rotate(0deg);
+  }
+  100%{
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@-moz-keyframes notiRotate{
+  0%{
+    -moz-transform: rotate(0deg);
+  }
+  20%{
+    -moz-transform: rotate(40deg);
+  }
+  50%{
+    -moz-transform: rotate(-40deg);
+  }
+  70%{
+    -moz-transform: rotate(0deg);
+  }
+  100%{
+    -moz-transform: rotate(0deg);
+  }
+}
+
+@keyframes notiRotate{
+  0%{
+    transform: rotate(0deg);
+  }
+  20%{
+    transform: rotate(40deg);
+  }
+  50%{
+    transform: rotate(-40deg);
+  }
+  70%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
 }
 
 /*********************************************************************
