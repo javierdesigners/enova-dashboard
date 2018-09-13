@@ -62,26 +62,41 @@ html, body{
 }
 
 body{
-  background: #fff;
+  background: #f7f8fb;
+}
+
+.wrap{
+  display: block;
+  margin: 0 auto;
+  padding-top: 120px;
+  height: 800px;
+  width: 90%;
 }
 
 /*********************************************************************
 *** HEADER ***********************************************************
 *********************************************************************/
 .head{
-  /* background: #fff; */
-  background: #f2f2f2;
+  background: #fff;
   color: #acb3b9;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  box-shadow: 0 0 15px #d4d4d4;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .head .col{
   display: flex;
   align-items: center;
   width: 40%;
+}
+
+.head .col.right{
+  justify-content: flex-end;
 }
 
 /* - BOARD - */
@@ -95,8 +110,17 @@ body{
   font-family: "RobotoBold", Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 80px;
+  cursor: pointer;
   display: block;
   padding-left: 65px;
+  outline: none;
+  -webkit-transition: color .5s ease 0s;
+  -moz-transition: color .5s ease 0s;
+  transition: color .5s ease 0s;
+}
+
+.head .board span:hover{
+  color: #505c67;
 }
 
 /* - SEARCH - */
@@ -143,6 +167,7 @@ body{
 .notification{
   display: flex;
   margin-left: 20px;
+  margin-right: 25px;
   position: relative;
 }
 
@@ -168,6 +193,48 @@ body{
   animation: notiRotate 1s infinite linear;
 }
 
+/* - BUTTON: BURGER - */
+.btnBurger{
+  background: transparent url(./images/ico_burger.png) no-repeat 50% 50%;
+  border-left: 1px #efefef solid;
+  cursor: pointer;
+  display: block;
+  height: 80px;
+  width: 70px;
+  outline: none;
+}
+
+/*********************************************************************
+*** CONTENT **********************************************************
+*********************************************************************/
+.title{
+  display: flex;
+}
+
+.title .ico{
+  background: #5390ff url(images/ico_star.png) no-repeat 50% 50%;
+  display: block;
+  box-shadow: 0 5px 10px #91b5f6;
+  border-radius: 4px;
+  margin-right: 25px;
+  height: 40px;
+  width: 40px;
+}
+
+.title h2{
+  font-family: "RobotoBold", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  color: #2c374e;
+}
+
+.title h2 span{
+  font-family: "RobotoRegular", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #acb3b9;
+  display: block;
+  padding-top: 4px;
+}
 
 
 /*********************************************************************
@@ -178,12 +245,15 @@ body{
     -webkit-transform: rotate(0deg);
   }
   20%{
-    -webkit-transform: rotate(40deg);
+    -webkit-transform: rotate(20deg);
   }
-  50%{
-    -webkit-transform: rotate(-40deg);
+  40%{
+    -webkit-transform: rotate(0deg);
   }
-  70%{
+  60%{
+    -webkit-transform: rotate(-20deg);
+  }
+  80%{
     -webkit-transform: rotate(0deg);
   }
   100%{
@@ -196,12 +266,15 @@ body{
     -moz-transform: rotate(0deg);
   }
   20%{
-    -moz-transform: rotate(40deg);
+    -moz-transform: rotate(20deg);
   }
-  50%{
-    -moz-transform: rotate(-40deg);
+  40%{
+    -moz-transform: rotate(0deg);
   }
-  70%{
+  60%{
+    -moz-transform: rotate(-20deg);
+  }
+  80%{
     -moz-transform: rotate(0deg);
   }
   100%{
@@ -214,12 +287,15 @@ body{
     transform: rotate(0deg);
   }
   20%{
-    transform: rotate(40deg);
+    transform: rotate(20deg);
   }
-  50%{
-    transform: rotate(-40deg);
+  40%{
+    transform: rotate(0deg);
   }
-  70%{
+  60%{
+    transform: rotate(-20deg);
+  }
+  80%{
     transform: rotate(0deg);
   }
   100%{
